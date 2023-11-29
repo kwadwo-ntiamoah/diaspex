@@ -1,7 +1,10 @@
 import 'package:diaspex/config/service_locator.dart';
 import 'package:diaspex/view_models/app_init_vm.dart';
+import 'package:diaspex/view_models/category_vm.dart';
 import 'package:diaspex/view_models/nav_vm.dart';
 import 'package:diaspex/view_models/login_vm.dart';
+import 'package:diaspex/view_models/news_vm.dart';
+import 'package:diaspex/view_models/welcome_search_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -15,8 +18,24 @@ class AppNotificationProvider extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<AppInitVM>(create: (ctx) => AppInitVM()),
-        ChangeNotifierProvider<LoginVM>(create: (ctx) => LoginVM(authUseCase: getIt())),
-        ChangeNotifierProvider<AppNavigationVM>(create: (ctx) => AppNavigationVM()),
+        ChangeNotifierProvider<LoginVM>(
+          create: (ctx) => LoginVM(
+            authRepo: getIt(),
+            storage: getIt(),
+          ),
+        ),
+        ChangeNotifierProvider<AppNavigationVM>(
+          create: (ctx) => AppNavigationVM(),
+        ),
+        ChangeNotifierProvider<WelcomeSearchVM>(
+          create: (ctx) => WelcomeSearchVM(
+            storage: getIt(),
+          ),
+        ),
+        ChangeNotifierProvider<NewsVM>(
+            create: (ctx) => NewsVM(newsRepo: getIt())),
+        ChangeNotifierProvider<CategoryVM>(
+            create: (ctx) => CategoryVM(categoryRepo: getIt())),
       ],
       child: child,
     );

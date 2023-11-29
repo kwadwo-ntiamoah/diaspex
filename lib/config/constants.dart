@@ -1,5 +1,3 @@
-import '../data/types.dart';
-
 class AppConstants {
   AppConstants._();
 
@@ -47,6 +45,8 @@ class AppStrings {
   static String questions = "Questions";
   static String posts = "Posts";
   static String settings = "Settings";
+  static String warning = "Warning";
+  static String ok = "Okay";
 
   static String getQuickAccess =
       "Get quick access to every information you will need to move in and out of Germany.";
@@ -55,12 +55,27 @@ class AppStrings {
 class AppRoutes {
   AppRoutes._();
 
-  static RouteType splash = const RouteType(routeName: "splash", routePath: "/");
-  static RouteType canvas = const RouteType(routeName: "canvas", routePath: "/canvas");
-  static RouteType auth = const RouteType(routeName: "auth", routePath: "/auth");
-  static RouteType home = const RouteType(routeName: "home", routePath: "/home");
-  static RouteType dashboard = const RouteType(routeName: "dashboard", routePath: "/dashboard");
-  static RouteType replyQuestion = const RouteType(routeName: "replyQuestion", routePath: "/replyQuestion");
-  static RouteType replyPost = const RouteType(routeName: "replyPost", routePath: "/replyPost");
-  static RouteType addPostQuestion = const RouteType(routeName: "addPostQuestion", routePath: "/addPostQuestion");
+  static String splash = "/";
+  static String canvas = "/canvas";
+  static String auth = "/auth";
+  static String home = "/home";
+  static String dashboard = "/dashboard";
+  static String replyQuestion = "/replyQuestion";
+  static String replyPost = "/replyPost";
+  static String addPostQuestion = "/addPostQuestion";
+  static String news = "/news";
+  static String category = "/category";
+}
+
+class ApiConstants {
+  ApiConstants._();
+
+  static String baseUrl = "http://161.35.54.129:8080/api";
+
+  // auth
+  static String token = "$baseUrl/auth/token";
+  static String me = "$baseUrl/auth/me";
+
+  // news
+  static String news = "$baseUrl/news";
 }

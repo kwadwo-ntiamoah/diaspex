@@ -2,7 +2,7 @@ import 'package:diaspex/config/theme_config.dart';
 import 'package:diaspex/views/shared/app_text_form_field.dart';
 import 'package:diaspex/views/shared/bottom_action.dart';
 import 'package:diaspex/views/shared/question_peek.dart';
-import 'package:diaspex/views/shared/simple_appBar.dart';
+import 'package:diaspex/views/shared/simple_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -22,7 +22,7 @@ class ReplyQuestionView extends StatelessWidget {
       appBar: const SimpleAppBar(
         title: "Go Back",
         centerTitle: false,
-      ).build(context),
+      ),
       body: const ReplyQuestionBody(),
     );
   }

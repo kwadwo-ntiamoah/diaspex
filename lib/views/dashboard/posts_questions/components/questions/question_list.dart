@@ -1,4 +1,5 @@
 import 'package:diaspex/config/constants.dart';
+import 'package:diaspex/view_models/category_vm.dart';
 import 'package:diaspex/view_models/nav_vm.dart';
 import 'package:diaspex/views/dashboard/posts_questions/components/questions/question_card.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,7 +13,8 @@ class QuestionList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<AppNavigationVM>(builder: (ctx, state, _) {
+    return Consumer2<AppNavigationVM, CategoryVM>(
+        builder: (ctx, state, categoryState, _) {
       return MaterialApp(
         color: AppColors.btnPrimary,
         debugShowCheckedModeBanner: false,
@@ -33,36 +35,47 @@ class QuestionList extends StatelessWidget {
                         borderColor: AppColors.bgGray,
                         selectedColor: AppColors.btnPrimary,
                         unselectedColor: AppColors.bgLight,
-                        children: <String, Widget>{
-                          "All": Padding(
-                            padding: EdgeInsets.all(AppConstants.smallMedium),
-                            child: Text(
-                              "Lifestyle",
-                              style:
-                                  TextStyle(fontSize: AppConstants.smallMedium),
-                            ),
-                          ),
-                          "Category 2": Padding(
-                            padding: EdgeInsets.all(AppConstants.smallMedium),
-                            child: Text(
-                              "School",
-                              style:
-                                  TextStyle(fontSize: AppConstants.smallMedium),
-                            ),
-                          ),
-                          "Category 3": Padding(
-                            padding: EdgeInsets.all(AppConstants.smallMedium),
-                            child: Text("Tourism", style: TextStyle(fontSize: AppConstants.smallMedium)),
-                          ),
-                          "Category 4": Padding(
-                            padding: EdgeInsets.all(AppConstants.smallMedium),
-                            child: Text("Security", style: TextStyle(fontSize: AppConstants.smallMedium)),
-                          ),
-                          "Food & Drinks": Padding(
-                            padding: EdgeInsets.all(AppConstants.smallMedium),
-                            child: Text("Food & Drinks", style: TextStyle(fontSize: AppConstants.smallMedium)),
-                          ),
+                        children: {
+                          for (var category in categoryState.questionCategories)
+                            category.title: Padding(
+                                padding:
+                                    EdgeInsets.all(AppConstants.smallMedium),
+                                child: Text(
+                                  "Lifestyle",
+                                  style: TextStyle(
+                                      fontSize: AppConstants.smallMedium),
+                                ))
                         },
+                        // children: <String, Widget>{
+                        //   "All": Padding(
+                        //     padding: EdgeInsets.all(AppConstants.smallMedium),
+                        //     child: Text(
+                        //       "Lifestyle",
+                        //       style:
+                        //           TextStyle(fontSize: AppConstants.smallMedium),
+                        //     ),
+                        //   ),
+                        //   "Category 2": Padding(
+                        //     padding: EdgeInsets.all(AppConstants.smallMedium),
+                        //     child: Text(
+                        //       "School",
+                        //       style:
+                        //           TextStyle(fontSize: AppConstants.smallMedium),
+                        //     ),
+                        //   ),
+                        //   "Category 3": Padding(
+                        //     padding: EdgeInsets.all(AppConstants.smallMedium),
+                        //     child: Text("Tourism", style: TextStyle(fontSize: AppConstants.smallMedium)),
+                        //   ),
+                        //   "Category 4": Padding(
+                        //     padding: EdgeInsets.all(AppConstants.smallMedium),
+                        //     child: Text("Security", style: TextStyle(fontSize: AppConstants.smallMedium)),
+                        //   ),
+                        //   "Food & Drinks": Padding(
+                        //     padding: EdgeInsets.all(AppConstants.smallMedium),
+                        //     child: Text("Food & Drinks", style: TextStyle(fontSize: AppConstants.smallMedium)),
+                        //   ),
+                        // },
                         groupValue: state.currentQuestionCategory,
                         onValueChanged: (value) {
                           state.setCurrentQuestionCategory(value);

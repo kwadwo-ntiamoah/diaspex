@@ -2,6 +2,9 @@
 class Assets {
   Assets._();
 
+  static const String animationsError = 'assets/animations/error.json';
+  static const String animationsSuccess = 'assets/animations/success.json';
+  static const String animationsWarning = 'assets/animations/warning.json';
   static const String iconsEmail = 'assets/icons/email.png';
   static const String iconsFacebook = 'assets/icons/facebook.png';
   static const String iconsGoogle = 'assets/icons/google.png';

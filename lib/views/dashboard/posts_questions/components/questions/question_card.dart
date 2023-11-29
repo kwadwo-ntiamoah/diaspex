@@ -13,7 +13,7 @@ class QuestionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.pushNamed(AppRoutes.replyQuestion.routeName),
+      onTap: () => context.pushNamed(AppRoutes.replyQuestion),
       child: Container(
         color: AppColors.bgLight,
         padding: EdgeInsets.all(AppConstants.defaultSpacing),

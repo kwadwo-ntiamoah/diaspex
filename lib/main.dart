@@ -5,7 +5,7 @@ import 'package:diaspex/config/router.dart';
 import 'package:diaspex/config/theme_config.dart';
 import 'package:flutter/material.dart';
 import 'package:diaspex/config/service_locator.dart';
-import 'package:diaspex/config/network.dart';
+import 'package:diaspex/services/network/network.dart';
 import 'package:flutter/services.dart';
 
 void main() {

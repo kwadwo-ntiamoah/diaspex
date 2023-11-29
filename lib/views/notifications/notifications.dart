@@ -1,6 +1,6 @@
 import 'package:diaspex/config/constants.dart';
 import 'package:diaspex/config/theme_config.dart';
-import 'package:diaspex/views/shared/simple_appBar.dart';
+import 'package:diaspex/views/shared/simple_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:diaspex/generated/assets.dart';
@@ -18,7 +18,7 @@ class NotificationsView extends StatelessWidget {
         appBar: SimpleAppBar(
           title: AppStrings.inbox,
           implyLeading: false,
-        ).build(context),
+        ),
         body: ListView(
           children: [
             Padding(

@@ -1,0 +1,3 @@
+enum CategoryPostType {
+  question, post
+}

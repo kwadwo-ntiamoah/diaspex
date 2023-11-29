@@ -10,8 +10,8 @@ class AppInitVM extends ChangeNotifier {
     await Future.delayed(const Duration(seconds: 5), () => {
       developer.log("This run")
     });
-    _isResolved = true;
 
+    _isResolved = true;
     notifyListeners();
   }
 }

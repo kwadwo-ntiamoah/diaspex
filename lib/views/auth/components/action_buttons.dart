@@ -50,9 +50,7 @@ class ActionButtons extends StatelessWidget {
                   backgroundColor: AppColors.bgLight,
                   context: context,
                   isScrollControlled: true,
-                  builder: (ctx) {
-                    return const LoginView();
-                  },
+                  builder: (ctx) => const LoginView(),
                 );
               })
         ],

@@ -1,7 +1,6 @@
 import 'package:diaspex/views/posts_questions/post_components/add_post.dart';
 import 'package:diaspex/views/posts_questions/question_components/add_question.dart';
-import 'package:diaspex/views/shared/bottom_action.dart';
-import 'package:diaspex/views/shared/simple_appBar.dart';
+import 'package:diaspex/views/shared/simple_appbar.dart';
 import 'package:flutter/material.dart';
 
 import 'package:diaspex/config/constants.dart';
@@ -25,7 +24,7 @@ class _AddPostQuestionViewState extends State<AddPostQuestionView>
         appBar: SimpleAppBar(
           title: AppStrings.create,
           boldTitle: true,
-        ).build(context),
+        ),
         body: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,

@@ -43,7 +43,7 @@ class KFloatingButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      onPressed: () => context.pushNamed(AppRoutes.addPostQuestion.routeName),
+      onPressed: () => context.pushNamed(AppRoutes.addPostQuestion),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(100),
         side: BorderSide(width: 1.5, color: AppColors.btnPrimary),

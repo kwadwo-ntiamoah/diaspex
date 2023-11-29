@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
-class SimpleAppBar extends StatelessWidget {
+class SimpleAppBar extends StatelessWidget implements PreferredSizeWidget{
   final String title;
   final bool centerTitle;
   final bool boldTitle;
@@ -29,11 +29,15 @@ class SimpleAppBar extends StatelessWidget {
         icon: Icon(FontAwesomeIcons.arrowLeftLong,
             size: AppConstants.defaultIconSize),
       ): null,
-      title: Text(title, style: Theme.of(context).textTheme.bodySmall!.copyWith(
+      title: Text(title, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.bodySmall!.copyWith(
         fontWeight: boldTitle ? FontWeight.bold : FontWeight.normal
       )),
       scrolledUnderElevation: .2,
       backgroundColor: AppColors.bgLight,
     );
   }
+
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
