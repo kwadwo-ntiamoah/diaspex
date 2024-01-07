@@ -1,6 +1,7 @@
 import 'package:diaspex/config/constants.dart';
 import 'package:diaspex/config/theme_config.dart';
 import 'package:diaspex/view_models/category_vm.dart';
+import 'package:diaspex/view_models/post_vm.dart';
 import 'package:diaspex/views/dashboard/posts_questions/components/posts/post_list.dart';
 import 'package:diaspex/views/dashboard/posts_questions/components/questions/question_list.dart';
 import 'package:flutter/material.dart';
@@ -21,6 +22,7 @@ class _QuestionPostSegmentState extends State<QuestionPostSegment> {
   void didChangeDependencies() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       context.read<CategoryVM>().getAllCategories();
+      context.read<PostVm>().getAllPosts();
     });
 
     super.didChangeDependencies();

@@ -15,11 +15,11 @@ class CategoryRepo implements ICategoryRepo {
 
   @override
   Future<ApiResponse> getAllCategories() async {
-    return await client.get(ApiConstants.news);
+    return await client.get(ApiConstants.categories);
   }
 
   @override
   Future<ApiResponse> getSingleCategory(String categoryId) async {
-    return await client.get("${ApiConstants.news}/$categoryId");
+    return await client.get("${ApiConstants.categories}/$categoryId");
   }
 }

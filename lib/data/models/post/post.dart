@@ -7,7 +7,7 @@ part 'post.g.dart';
 class Post {
   final String id, categoryId, owner, title, content, createdDate, modifiedDate;
   final bool isDeleted;
-  final CategoryPostType type;
+  final int type;
 
   Post({
     required this.id,

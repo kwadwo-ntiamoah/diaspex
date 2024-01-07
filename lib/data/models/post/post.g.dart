@@ -15,7 +15,7 @@ Post _$PostFromJson(Map<String, dynamic> json) => Post(
       createdDate: json['createdDate'] as String,
       modifiedDate: json['modifiedDate'] as String,
       isDeleted: json['isDeleted'] as bool,
-      type: $enumDecode(_$CategoryPostTypeEnumMap, json['type']),
+      type: json['type'] as int,
     );
 
 Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
@@ -27,10 +27,5 @@ Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
       'createdDate': instance.createdDate,
       'modifiedDate': instance.modifiedDate,
       'isDeleted': instance.isDeleted,
-      'type': _$CategoryPostTypeEnumMap[instance.type]!,
+      'type': instance.type,
     };
-
-const _$CategoryPostTypeEnumMap = {
-  CategoryPostType.question: 'question',
-  CategoryPostType.post: 'post',
-};

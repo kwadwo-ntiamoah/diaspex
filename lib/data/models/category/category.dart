@@ -6,7 +6,7 @@ part 'category.g.dart';
 @JsonSerializable()
 class Category {
   final String id, title, description;
-  final CategoryPostType type;
+  final int type;
 
   Category({ required this.id, required this.title, required this.description, required this.type });
 

@@ -1,14 +1,17 @@
 import 'package:diaspex/config/constants.dart';
 import 'package:diaspex/config/theme_config.dart';
+import 'package:diaspex/data/models/post/post.dart';
 import 'package:diaspex/views/shared/question_peek.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import 'package:diaspex/generated/assets.dart';
+import 'package:get_time_ago/get_time_ago.dart';
 import 'package:go_router/go_router.dart';
 
-class QuestionCard extends StatelessWidget {
-  const QuestionCard({super.key});
+class PostCard extends StatelessWidget {
+  final Post post;
+
+  const PostCard({super.key, required this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +24,7 @@ class QuestionCard extends StatelessWidget {
           children: [
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SvgPicture.asset(Assets.iconsProfile),
                 SizedBox(width: AppConstants.smallSpacing),
@@ -31,22 +35,28 @@ class QuestionCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Thompson Roseville",
+                            post.title,
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyMedium!
                                 .copyWith(fontWeight: FontWeight.bold),
                           ),
-                          Text("1hr ago",
-                              style: Theme.of(context).textTheme.titleMedium)
+                          Text(
+                            GetTimeAgo.parse(DateTime.parse(post.createdDate), locale: 'en'),
+                            style: Theme.of(context).textTheme.titleMedium,
+                          )
                         ],
                       ),
                       SizedBox(height: AppConstants.xSmallSpacing),
-                      Text(
-                          "Lorem ipsum dolor sit amet, consecrate missals disciplining elite?",
-                          style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                                fontSize: AppConstants.xSmallMedium,
-                              )),
+                      SizedBox(
+                        width: double.infinity,
+                        child: Text(
+                            post.content,
+                            style:
+                                Theme.of(context).textTheme.bodySmall!.copyWith(
+                                      fontSize: AppConstants.xSmallMedium,
+                                    )),
+                      ),
                       SizedBox(height: AppConstants.xSmallMedium),
                     ],
                   ),

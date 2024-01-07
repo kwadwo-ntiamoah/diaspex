@@ -51,7 +51,12 @@ class _LatestNewsState extends State<LatestNews> {
         ),
         Consumer<NewsVM>(builder: (context, state, _) {
           if (state.news.isEmpty || state.status == FormStatus.loading) {
-            return const Text("shimmer here");
+            return const SizedBox(
+              height: 200,
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
           }
 
           return Container(

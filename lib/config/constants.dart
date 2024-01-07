@@ -47,6 +47,7 @@ class AppStrings {
   static String settings = "Settings";
   static String warning = "Warning";
   static String ok = "Okay";
+  static String success = "Success";
 
   static String getQuickAccess =
       "Get quick access to every information you will need to move in and out of Germany.";
@@ -78,4 +79,8 @@ class ApiConstants {
 
   // news
   static String news = "$baseUrl/news";
+
+  // categories
+static String categories = "$baseUrl/category";
+static String posts = "$baseUrl/post";
 }

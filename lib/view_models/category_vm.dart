@@ -14,11 +14,28 @@ class CategoryVM extends ChangeNotifier with ErrorNotifierMixin{
   final List<Category> _questionCategories = [];
   final List<Category> _postCategories = [];
 
+  Category _currentPostCategory = Category(id: "All", title: "All", description: "All" , type: CategoryPostType.post.index);
+  Category _currentQuestionCategory = Category(id: "All", title: "All", description: "All" , type: CategoryPostType.question.index);
+
   List<Category> get questionCategories => _questionCategories;
   List<Category> get postCategories => _postCategories;
 
+  Category get currentQuestionCategory => _currentQuestionCategory;
+  Category get currentPostCategory => _currentPostCategory;
+
   FormStatus _status = FormStatus.init;
   FormStatus get status => _status;
+
+  void setCurrentPostCategory(String newCategory) {
+    _currentPostCategory = _postCategories.firstWhere((element) => element.title == newCategory);
+    notifyListeners();
+  }
+
+  void setCurrentQuestionCategory(String newCategory) {
+    var temp = _questionCategories.firstWhere((element) => element.title == newCategory);
+    _currentQuestionCategory = temp;
+    notifyListeners();
+  }
 
   Future getAllCategories() async {
     try {
@@ -29,24 +46,31 @@ class CategoryVM extends ChangeNotifier with ErrorNotifierMixin{
       ApiResponse response = await categoryRepo.getAllCategories();
 
       if (response.status == 200) {
+        final tempQuestionCategory =  Category(id: "All", title: "All", description: "All" , type: CategoryPostType.question.index);
+        final tempPostCategory =  Category(id: "All", title: "All", description: "All" , type: CategoryPostType.post.index);
+
+        _postCategories.add(tempPostCategory);
+        _questionCategories.add(tempQuestionCategory);
+
         for (var element in response.data) {
           Category categoryItem = Category.fromJson(element);
 
-          if (categoryItem.type == CategoryPostType.post) {
+          if (categoryItem.type == CategoryPostType.post.index) {
             _postCategories.add(categoryItem);
           }
 
-          if (categoryItem.type == CategoryPostType.question) {
+          if (categoryItem.type == CategoryPostType.question.index) {
             _questionCategories.add(categoryItem);
           }
         }
 
-        notifyListeners();
+        _status = FormStatus.passed;
       } else {
         notifyError(response.message);
-        notifyListeners();
+        _status = FormStatus.failed;
       }
 
+      notifyListeners();
     } catch(e) {
       notifyError(e.toString());
       notifyListeners();
