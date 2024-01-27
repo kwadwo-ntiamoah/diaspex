@@ -1,14 +1,14 @@
 import 'package:diaspex/config/constants.dart';
 import 'package:diaspex/data/models/news/news.dart';
+import 'package:diaspex/data/models/post/post.dart';
 import 'package:diaspex/views/auth/auth.dart';
 import 'package:diaspex/views/dashboard/dashboard.dart';
 import 'package:diaspex/views/drawing_board.dart';
 import 'package:diaspex/views/index/index.dart';
 import 'package:diaspex/views/news/news.dart';
 import 'package:diaspex/views/posts_questions/add_post_question.dart';
-import 'package:diaspex/views/posts_questions/reply_post.dart';
 import 'package:diaspex/views/splash/splash_screen.dart';
-import 'package:diaspex/views/posts_questions/reply_question.dart';
+import 'package:diaspex/views/posts_questions/reply_post_question.dart';
 import 'package:go_router/go_router.dart';
 
 final router = GoRouter(routes: [
@@ -38,13 +38,12 @@ final router = GoRouter(routes: [
     builder: (ctx, state) => const DashboardView(),
   ),
   GoRoute(
-      path: AppRoutes.replyQuestion,
-      name: AppRoutes.replyQuestion,
-      builder: (ctx, state) => const ReplyQuestionView()),
-  GoRoute(
-      path: AppRoutes.replyPost,
-      name: AppRoutes.replyPost,
-      builder: (ctx, state) => const ReplyPostView()),
+      path: AppRoutes.replyPostQuestion,
+      name: AppRoutes.replyPostQuestion,
+      builder: (ctx, state) {
+        Post post = state.extra as Post;
+        return ReplyPostQuestionView(post: post);
+      }),
   GoRoute(
       path: AppRoutes.addPostQuestion,
       name: AppRoutes.addPostQuestion,

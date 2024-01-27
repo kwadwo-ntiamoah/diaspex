@@ -42,7 +42,8 @@ abstract class IDTextFormField extends StatelessWidget {
             .copyWith(color: AppColors.textDark, fontSize: 12),
         obscureText: obscureText ?? false,
         controller: controller,
-        maxLines: obscureText == true ? 1 : maxLines,
+        maxLines: obscureText == true ? 1 : maxLines ?? 4,
+        minLines: 1,
         textInputAction: textInputAction ?? TextInputAction.next,
         keyboardType: textInputType ?? TextInputType.text,
         decoration: InputDecoration(
@@ -62,16 +63,15 @@ abstract class IDTextFormField extends StatelessWidget {
 }
 
 class DTextFormField extends IDTextFormField {
-  const DTextFormField({
-    super.key,
-    required super.labelText,
-    required super.controller,
-    super.maxLines,
-    super.obscureText = false,
-    super.fieldHeight,
-    super.textInputAction,
-    super.textInputType
-  });
+  const DTextFormField(
+      {super.key,
+      required super.labelText,
+      required super.controller,
+      super.obscureText = false,
+      super.fieldHeight,
+        super.maxLines,
+      super.textInputAction,
+      super.textInputType});
 }
 
 class DTextFormFieldWithSuffix extends IDTextFormField {

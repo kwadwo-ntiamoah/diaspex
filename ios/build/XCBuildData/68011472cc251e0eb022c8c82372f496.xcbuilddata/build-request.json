@@ -1,0 +1,62 @@
+{
+  "buildCommand" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
+  },
+  "configuredTargets" : [
+    {
+      "guid" : "bfdfe7dc352907fc980b868725387e98e5199a3f70555689be7018ee7f9f878d"
+    },
+    {
+      "guid" : "bfdfe7dc352907fc980b868725387e989da425bb6d6d5d8dbb95e4afffb82217"
+    },
+    {
+      "guid" : "bfdfe7dc352907fc980b868725387e98312b4bc59bbbe2c06c205bf4da6737f5"
+    },
+    {
+      "guid" : "bfdfe7dc352907fc980b868725387e98483832d3c820398e9d40e1a6904b03fe"
+    },
+    {
+      "guid" : "bfdfe7dc352907fc980b868725387e987cb9c58d33d05677fb576674bac57313"
+    },
+    {
+      "guid" : "bfdfe7dc352907fc980b868725387e9830037b09fee48cfce1f8562d753688c8"
+    },
+    {
+      "guid" : "bfdfe7dc352907fc980b868725387e983786431ce548989b846bbf1a7384f58e"
+    }
+  ],
+  "containerPath" : "/Users/jojo/Sandbox/Diaspex/mobile/ios/Pods/Pods.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/jojo/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/jojo/Library/Developer/Xcode/DerivedData/Pods-dplbldonshyureaszjggpwfgiphp/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/jojo/Library/Developer/Xcode/DerivedData/Pods-dplbldonshyureaszjggpwfgiphp/Index.noindex/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Release",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO",
+          "ENABLE_XOJIT_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : false,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : false
+}

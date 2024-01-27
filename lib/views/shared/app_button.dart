@@ -2,6 +2,21 @@ import 'package:diaspex/config/constants.dart';
 import 'package:diaspex/config/theme_config.dart';
 import 'package:flutter/material.dart';
 
+class ButtonStyles {
+  ButtonStyles._();
+
+  static ButtonStyle defaultButtonStyle = TextButton.styleFrom(
+    backgroundColor: AppColors.btnPrimary,
+    shape: RoundedRectangleBorder(
+      borderRadius: const BorderRadius.all(Radius.circular(8)),
+      side: BorderSide(
+        width: 1,
+        color: AppColors.btnPrimary,
+      ),
+    ),
+  );
+}
+
 ///
 /// Button Abstract Class start
 ///

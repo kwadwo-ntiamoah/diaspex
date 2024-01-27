@@ -1,6 +1,7 @@
 import 'package:diaspex/data/repos/category.repo.dart';
 import 'package:diaspex/data/repos/news.repo.dart';
 import 'package:diaspex/data/repos/post.repo.dart';
+import 'package:diaspex/data/repos/reply.repo.dart';
 import 'package:diaspex/services/network/network.dart';
 import 'package:diaspex/data/repos/auth.repo.dart';
 import 'package:diaspex/services/storage.dart';
@@ -29,5 +30,6 @@ void setup() {
       ..registerSingleton<IAuthRepo>(AuthRepo(client: getIt()))
       ..registerSingleton<INewsRepo>(NewsRepo(client: getIt()))
       ..registerSingleton<ICategoryRepo>(CategoryRepo(client: getIt()))
-      ..registerSingleton<IPostRepo>(PostRepo(client: getIt()));
+      ..registerSingleton<IPostRepo>(PostRepo(client: getIt()))
+      ..registerSingleton<IReplyRepo>(ReplyRepo(client: getIt()));
 }

@@ -61,8 +61,7 @@ class AppRoutes {
   static String auth = "/auth";
   static String home = "/home";
   static String dashboard = "/dashboard";
-  static String replyQuestion = "/replyQuestion";
-  static String replyPost = "/replyPost";
+  static String replyPostQuestion = "/replyPostQuestion";
   static String addPostQuestion = "/addPostQuestion";
   static String news = "/news";
   static String category = "/category";
@@ -81,6 +80,9 @@ class ApiConstants {
   static String news = "$baseUrl/news";
 
   // categories
-static String categories = "$baseUrl/category";
-static String posts = "$baseUrl/post";
+  static String categories = "$baseUrl/category";
+  static String posts = "$baseUrl/post";
+
+  // replies
+  static String replies = "$baseUrl/reply/";
 }

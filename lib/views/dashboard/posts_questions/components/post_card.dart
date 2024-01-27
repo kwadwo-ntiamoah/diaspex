@@ -2,6 +2,7 @@ import 'package:diaspex/config/constants.dart';
 import 'package:diaspex/config/theme_config.dart';
 import 'package:diaspex/data/models/post/post.dart';
 import 'package:diaspex/views/shared/question_peek.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:diaspex/generated/assets.dart';
@@ -16,7 +17,7 @@ class PostCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.pushNamed(AppRoutes.replyQuestion),
+      onTap: () => context.pushNamed(AppRoutes.replyPostQuestion, extra: post),
       child: Container(
         color: AppColors.bgLight,
         padding: EdgeInsets.all(AppConstants.defaultSpacing),
@@ -41,9 +42,12 @@ class PostCard extends StatelessWidget {
                                 .bodyMedium!
                                 .copyWith(fontWeight: FontWeight.bold),
                           ),
-                          Text(
-                            GetTimeAgo.parse(DateTime.parse(post.createdDate), locale: 'en'),
-                            style: Theme.of(context).textTheme.titleMedium,
+                          Flexible(
+                            child: Text(
+                              textAlign: TextAlign.right,
+                              GetTimeAgo.parse(DateTime.parse(post.createdDate), locale: 'en'),
+                              style: Theme.of(context).textTheme.titleMedium,
+                            ),
                           )
                         ],
                       ),
@@ -63,7 +67,7 @@ class PostCard extends StatelessWidget {
                 )
               ],
             ),
-            const QuestionPeekWidget(),
+            QuestionPeekWidget(post: post),
           ],
         ),
       ),

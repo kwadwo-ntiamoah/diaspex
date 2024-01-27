@@ -96,15 +96,26 @@ class Welcome extends StatelessWidget {
             );
           },
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SvgPicture.asset(Assets.iconsProfile),
-              SizedBox(width: AppConstants.xSmallMedium),
-              Text(
-                "Welcome ${state.user ?? ""}",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .copyWith(fontWeight: FontWeight.bold),
+              Row(
+                children: [
+                  SvgPicture.asset(Assets.iconsProfile),
+                  SizedBox(width: AppConstants.xSmallMedium),
+                  Text(
+                    "Welcome ${state.user ?? ""}",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .copyWith(fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  IconButton(onPressed: () {}, icon: Icon(Icons.settings, color: AppColors.iconDark,)),
+                  IconButton(onPressed: () {}, icon: Icon(Icons.notifications_rounded, color: AppColors.iconDark,)),
+                ],
               )
             ],
           ),

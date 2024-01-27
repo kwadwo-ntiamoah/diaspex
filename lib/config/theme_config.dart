@@ -42,6 +42,7 @@ class AppTheme {
       borderRadius: BorderRadius.circular(8),
       borderSide: BorderSide(color: AppColors.borderDefault, width: 1));
 
+
   static final InputDecorationTheme _inputTheme = InputDecorationTheme(
     contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
     enabledBorder: _inputBorder,

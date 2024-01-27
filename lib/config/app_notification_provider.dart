@@ -5,6 +5,7 @@ import 'package:diaspex/view_models/nav_vm.dart';
 import 'package:diaspex/view_models/login_vm.dart';
 import 'package:diaspex/view_models/news_vm.dart';
 import 'package:diaspex/view_models/post_vm.dart';
+import 'package:diaspex/view_models/reply_vm.dart';
 import 'package:diaspex/view_models/welcome_search_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -37,7 +38,8 @@ class AppNotificationProvider extends StatelessWidget {
             create: (ctx) => NewsVM(newsRepo: getIt())),
         ChangeNotifierProvider<CategoryVM>(
             create: (ctx) => CategoryVM(categoryRepo: getIt())),
-        ChangeNotifierProvider(create: (ctx) => PostVm(postRepo: getIt()))
+        ChangeNotifierProvider(create: (ctx) => PostVm(postRepo: getIt())),
+        ChangeNotifierProvider(create: (ctx) => ReplyVm(replyRepo: getIt()))
       ],
       child: child,
     );
