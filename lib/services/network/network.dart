@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:diaspex/config/constants.dart';
 import 'package:diaspex/config/service_locator.dart';
 import 'package:diaspex/services/network/interceptors.dart';
 import 'package:dio/dio.dart';
@@ -9,7 +8,7 @@ import '../../data/models/api_response/api_response.dart';
 class MyHttpOverrides extends HttpOverrides {
   @override
   HttpClient createHttpClient(SecurityContext? context) {
-    // TODO: implement createHttpClient
+
     return super.createHttpClient(context)
       ..badCertificateCallback =
           (X509Certificate cert, String host, int port) => true;

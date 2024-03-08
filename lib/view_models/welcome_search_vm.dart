@@ -1,6 +1,5 @@
 import 'package:diaspex/services/storage.dart';
 import 'package:flutter/cupertino.dart';
-import 'dart:developer' as developer;
 
 class WelcomeSearchVM extends ChangeNotifier {
   final IStorage storage;

@@ -2,7 +2,6 @@ import 'package:diaspex/config/constants.dart';
 import 'package:diaspex/config/theme_config.dart';
 import 'package:diaspex/data/models/post/post.dart';
 import 'package:diaspex/views/shared/question_peek.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:diaspex/generated/assets.dart';

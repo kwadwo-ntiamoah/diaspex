@@ -1,4 +1,3 @@
-import 'package:diaspex/data/enums/category_post_enum.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'post.g.dart';

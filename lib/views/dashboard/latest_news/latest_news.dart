@@ -3,7 +3,6 @@ import 'package:diaspex/config/constants.dart';
 import 'package:diaspex/config/theme_config.dart';
 import 'package:diaspex/data/enums/form_status.dart';
 import 'package:diaspex/data/models/news/news.dart';
-import 'package:diaspex/generated/assets.dart';
 import 'package:diaspex/view_models/news_vm.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

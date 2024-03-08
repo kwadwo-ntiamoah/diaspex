@@ -17,7 +17,6 @@ class QuestionPostSegment extends StatefulWidget {
 }
 
 class _QuestionPostSegmentState extends State<QuestionPostSegment> {
-
   @override
   void didChangeDependencies() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -32,8 +31,7 @@ class _QuestionPostSegmentState extends State<QuestionPostSegment> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: Border(
-              top: BorderSide(color: AppColors.borderLight))),
+          border: Border(top: BorderSide(color: AppColors.borderLight))),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

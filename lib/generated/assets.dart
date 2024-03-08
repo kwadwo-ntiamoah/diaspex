@@ -13,5 +13,4 @@ class Assets {
   static const String imagesAuthBanner = 'assets/images/auth_banner.png';
   static const String imagesImageHolder = 'assets/images/image_holder.png';
   static const String imagesLogo = 'assets/images/logo.svg';
-
 }

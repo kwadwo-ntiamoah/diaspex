@@ -1,6 +1,7 @@
 import 'package:diaspex/config/constants.dart';
 import 'package:diaspex/data/models/news/news.dart';
 import 'package:diaspex/data/models/post/post.dart';
+import 'package:diaspex/data/models/reply/reply.dart';
 import 'package:diaspex/views/auth/auth.dart';
 import 'package:diaspex/views/dashboard/dashboard.dart';
 import 'package:diaspex/views/drawing_board.dart';
@@ -9,6 +10,7 @@ import 'package:diaspex/views/news/news.dart';
 import 'package:diaspex/views/posts_questions/add_post_question.dart';
 import 'package:diaspex/views/splash/splash_screen.dart';
 import 'package:diaspex/views/posts_questions/reply_post_question.dart';
+import 'package:diaspex/views/translate/translate.dart';
 import 'package:go_router/go_router.dart';
 
 final router = GoRouter(routes: [
@@ -45,15 +47,30 @@ final router = GoRouter(routes: [
         return ReplyPostQuestionView(post: post);
       }),
   GoRoute(
+      path: AppRoutes.translatePost,
+      name: AppRoutes.translatePost,
+      builder: (ctx, state) {
+        var post = state.extra as Post?;
+
+        return TranslateView(post: post);
+      }),
+  GoRoute(
+      path: AppRoutes.translateReply,
+      name: AppRoutes.translateReply,
+      builder: (ctx, state) {
+        var reply = state.extra as Reply?;
+
+        return TranslateView(reply: reply);
+      }),
+  GoRoute(
       path: AppRoutes.addPostQuestion,
       name: AppRoutes.addPostQuestion,
       builder: (ctx, state) => const AddPostQuestionView()),
   GoRoute(
-    path: AppRoutes.news,
-    name: AppRoutes.news,
-    builder: (ctx, state) {
-      News news = state.extra as News;
-      return NewsDetails(news: news);
-    }
-  ),
+      path: AppRoutes.news,
+      name: AppRoutes.news,
+      builder: (ctx, state) {
+        News news = state.extra as News;
+        return NewsDetails(news: news);
+      }),
 ], initialLocation: "/");

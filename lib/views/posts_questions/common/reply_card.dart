@@ -40,7 +40,9 @@ class ReplyCard extends StatelessWidget {
               })
             ],
           ),
-          QuestionPeekWidget(post: context.read<ReplyVm>().currentPost!),
+          Consumer<ReplyVm>(builder: (context, state, _) {
+            return QuestionPeekWidget(post: state.currentPost);
+          }),
         ],
       ),
     );

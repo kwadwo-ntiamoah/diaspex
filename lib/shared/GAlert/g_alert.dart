@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 library g_alert;
 
 import 'dart:ui';

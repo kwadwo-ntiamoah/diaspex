@@ -13,8 +13,23 @@ import 'package:provider/provider.dart';
 
 import 'latest_news/latest_news.dart';
 
-class DashboardView extends StatelessWidget {
+class DashboardView extends StatefulWidget {
   const DashboardView({super.key});
+
+  @override
+  State<DashboardView> createState() => _DashboardViewState();
+}
+
+class _DashboardViewState extends State<DashboardView> {
+
+  @override
+  void didChangeDependencies() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      context.read<WelcomeSearchVM>().getUserDetails();
+    });
+
+    super.didChangeDependencies();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -106,7 +121,7 @@ class Welcome extends StatelessWidget {
                     "Welcome ${state.user ?? ""}",
                     style: Theme.of(context)
                         .textTheme
-                        .bodyMedium!
+                        .bodySmall!
                         .copyWith(fontWeight: FontWeight.bold),
                   )
                 ],

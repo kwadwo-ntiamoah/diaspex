@@ -71,7 +71,7 @@ class AddPostQuestionField extends StatelessWidget {
 class _CategoryCard extends StatelessWidget {
   final Category category;
 
-  const _CategoryCard({super.key, required this.category});
+  const _CategoryCard({required this.category});
 
   @override
   Widget build(BuildContext context) {

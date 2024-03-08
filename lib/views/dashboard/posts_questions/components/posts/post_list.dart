@@ -1,9 +1,7 @@
 import 'package:diaspex/config/constants.dart';
 import 'package:diaspex/data/enums/category_post_enum.dart';
 import 'package:diaspex/data/enums/form_status.dart';
-import 'package:diaspex/data/models/category/category.dart';
 import 'package:diaspex/view_models/category_vm.dart';
-import 'package:diaspex/view_models/nav_vm.dart';
 import 'package:diaspex/view_models/post_vm.dart';
 import 'package:diaspex/views/dashboard/posts_questions/components/post_card.dart';
 import 'package:flutter/cupertino.dart';

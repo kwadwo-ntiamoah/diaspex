@@ -1,7 +1,7 @@
-class LoginPayload {
+class LoginEntity {
   final String email, password;
 
-  LoginPayload({ required this.email, required this.password });
+  LoginEntity({ required this.email, required this.password });
 
   toJson() {
     return { "email": email, "password": password };

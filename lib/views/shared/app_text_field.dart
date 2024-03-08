@@ -41,7 +41,6 @@ class SearchButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return SizedBox(
       height: AppConstants.xLargeSpacing,
       width: double.infinity,

@@ -3,9 +3,11 @@ import 'package:diaspex/config/theme_config.dart';
 import 'package:diaspex/data/enums/form_status.dart';
 import 'package:diaspex/generated/assets.dart';
 import 'package:diaspex/view_models/reply_vm.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get_time_ago/get_time_ago.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class ReplyList extends StatefulWidget {
@@ -60,13 +62,26 @@ class _ReplyListState extends State<ReplyList> {
                       ),
                 ),
                 SizedBox(height: AppConstants.xSmallSpacing),
-                SizedBox(
-                  width: double.infinity,
-                  child: Text(
-                    textAlign: TextAlign.right,
-                    GetTimeAgo.parse(DateTime.parse(reply.createdDate), locale: 'en'),
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
+                Row(
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          context.push(AppRoutes.translateReply, extra: reply);
+                        },
+                        icon: Icon(
+                          Icons.g_translate_sharp,
+                          color: AppColors.iconDark,
+                          size: AppConstants.defaultSpacing,
+                        )),
+                    Expanded(
+                      child: Text(
+                        textAlign: TextAlign.right,
+                        GetTimeAgo.parse(DateTime.parse(reply.createdDate),
+                            locale: 'en'),
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(height: AppConstants.xSmallSpacing),
                 Divider(

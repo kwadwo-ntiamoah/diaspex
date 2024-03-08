@@ -1,14 +1,21 @@
+// ignore_for_file: deprecated_member_use
+
 import 'dart:io';
 
 import 'package:diaspex/config/app_notification_provider.dart';
 import 'package:diaspex/config/router.dart';
 import 'package:diaspex/config/theme_config.dart';
+import 'package:diaspex/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:diaspex/config/service_locator.dart';
 import 'package:diaspex/services/network/network.dart';
 import 'package:flutter/services.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   HttpOverrides.global = MyHttpOverrides();
 
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(

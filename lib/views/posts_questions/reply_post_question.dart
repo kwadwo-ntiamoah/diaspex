@@ -1,13 +1,10 @@
 import 'package:diaspex/config/theme_config.dart';
 import 'package:diaspex/data/enums/form_status.dart';
 import 'package:diaspex/data/models/post/post.dart';
-import 'package:diaspex/shared/GAlert/g_alert.dart';
 import 'package:diaspex/shared/g_error_listener.dart';
 import 'package:diaspex/view_models/reply_vm.dart';
 import 'package:diaspex/views/posts_questions/common/reply_list.dart';
-import 'package:diaspex/views/shared/app_button.dart';
 import 'package:diaspex/views/shared/app_text_form_field.dart';
-import 'package:diaspex/views/shared/bottom_action.dart';
 import 'package:diaspex/views/shared/question_peek.dart';
 import 'package:diaspex/views/shared/simple_appbar.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +13,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:diaspex/config/constants.dart';
 import 'package:diaspex/generated/assets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 part 'common/reply_card.dart';
@@ -69,28 +65,6 @@ class ReplyPostQuestionBody extends StatelessWidget {
           WidgetsBinding.instance.addPostFrameCallback((_) {
             state.resetState();
             state.getPostReplies();
-            // GAlertWithCustomIcon(
-            //   context: context,
-            //   title: AppStrings.success,
-            //   subtitle: "Reply posted successfully",
-            //   icon: Lottie.asset(Assets.animationsSuccess,
-            //       width: 100, height: 100),
-            //   onWillPop: () {
-            //     context.pop();
-            //     state.resetState();
-            //     state.getPostReplies();
-            //   },
-            //   button: SizedBox(
-            //     width: MediaQuery.of(context).size.width * .5,
-            //     child: DButton(
-            //         onPressed: () {
-            //           context.pop();
-            //           state.resetState();
-            //           state.getPostReplies();
-            //         },
-            //         label: AppStrings.ok),
-            //   ),
-            // ).fire();
           });
         }
 

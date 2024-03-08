@@ -5,7 +5,6 @@ import 'package:diaspex/services/storage.dart';
 import 'package:diaspex/view_models/errorNotifier.mixin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:diaspex/data/entity/login.entity.dart';
-import 'dart:developer' as developer;
 
 class LoginVM extends ChangeNotifier with ErrorNotifierMixin {
   IAuthRepo authRepo;
@@ -58,7 +57,7 @@ class LoginVM extends ChangeNotifier with ErrorNotifierMixin {
       toggleLoader();
 
       if (_formKey.currentState!.validate()) {
-        var payload = LoginPayload(
+        var payload = LoginEntity(
             email: _usernameController.value.text,
             password: _passwordController.value.text);
 
